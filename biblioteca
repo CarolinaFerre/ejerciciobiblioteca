@@ -1,0 +1,93 @@
+package metodosverano;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Libro {
+static Scanner sc=new Scanner(System.in);
+static String titulo;
+static int numerodeveces;
+static String autor;
+static boolean prestado;
+static String decision;
+
+
+
+	public Libro(String titulo,String autor) {
+		// Constructor
+		this.titulo=titulo;
+		this.autor=autor;
+	}
+	
+	public void prestadooNo(String decision,boolean prestado) {
+		switch(decision) {
+		case "si":
+				
+				prestado=true;
+				System.out.println("Ha elegido la opción= "+decision);
+				System.out.println("El estado del libro es [prestado true, no prestado false]= "+prestado);
+				System.out.println("DISPONIBILIDAD DEL LIBRO:");
+				if (prestado==false) {
+					System.out.println("Usted puede adquirir el libro porque está disponible");
+					
+				}else {
+				System.out.println("El libro no está disponible porque acaba de aquirirlo");
+				
+				}	
+				
+			break;
+		case "no":
+			
+				prestado=false;	
+				System.out.println("Ha elegido la opción= "+decision);
+				System.out.println("El estado del libro es [prestado true, no prestado false]= "+prestado);
+				System.out.println("DISPONIBILIDAD DEL LIBRO:");
+				if (prestado==false) {
+					System.out.println("El libro está disponible porque usted no ha querido adquirirlo");
+					
+				}else {
+				
+				System.out.println("El libro no está disponible, lo siento :(");
+				
+				}
+				
+			break;
+		default:
+			System.out.println("Error, su información no está en nuestra base de datos");
+			System.exit(0);
+		}
+	}
+	
+
+	public void tarjetainfoLibro() {
+		ArrayList tarjetalibro=new ArrayList();
+		tarjetalibro.add(titulo);
+		tarjetalibro.add(autor);
+		tarjetalibro.add(decision);
+		
+		System.out.println("Tarjeta de información del libro= "+tarjetalibro.toString());
+	}
+
+
+
+
+	public static void main(String[] args) {
+		//Declaración de objeto
+	
+		int contador=0;
+		Libro libro=new Libro("tres metros sobre el cielo","Federico Moccia");
+		
+		// TODO Auto-generated method stub
+	
+		System.out.println("*******BIENVENIDO A LA BIBLIOTECA MUNICIPAL********");
+		System.out.println("Actualmente tenemos este libro= "+libro.titulo);
+		
+		System.out.println("¿Quiere cogerlo prestado? [Pulse si en caso de sí o no si es no");
+		decision=sc.next();
+		libro.prestadooNo(decision, prestado);
+		
+		libro.tarjetainfoLibro();
+		contador++;
+	}
+		
+
+}
