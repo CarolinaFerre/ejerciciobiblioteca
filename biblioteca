@@ -78,7 +78,7 @@ static String decision;
 		
 		// TODO Auto-generated method stub
 	
-		System.out.println("*******BIENVENIDO A LA BIBLIOTECA MUNICIPAL********");
+		System.out.println("*******BIENVENIDO A LA BIBLIOTECA MUNICIPAL*********");
 		System.out.println("Actualmente tenemos este libro= "+libro.titulo);
 		
 		System.out.println("¿Quiere cogerlo prestado? [Pulse si en caso de sí o no si es no");
